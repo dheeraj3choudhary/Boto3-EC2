@@ -1,6 +1,7 @@
 import boto3
 
 ec2 = boto3.resource('ec2')
+sns_client= boto3.client('sns')
 
 #Create a filter variable
 tagfilters=[
