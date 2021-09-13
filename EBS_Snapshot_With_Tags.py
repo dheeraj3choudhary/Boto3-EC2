@@ -10,8 +10,6 @@ tagfilters=[
     }
 ]
 
-snapshot_list=[] #Empty list which we will require to store our list of snapshot_ids
-
 for instance in ec2.instances.filter(Filters=tagfilters):
     for volume in instance.volumes.all():
         snapshot=volume.create_snapshot(Description='Snapshot created via script',
@@ -22,6 +20,3 @@ for instance in ec2.instances.filter(Filters=tagfilters):
                                             },
                                         ],
                                         )
-        snapshot_list.append(snapshot.snapshot_id)
-
-print(snapshot_list)
