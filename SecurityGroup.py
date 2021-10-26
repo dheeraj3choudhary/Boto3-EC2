@@ -3,9 +3,9 @@ import boto3
 client = boto3.client('ec2')
 
 # Create a security group and allow SSH inbound rule through the VPC
-security_resp = client.create_security_group(GroupName='Inspector-SG',
+security_resp = client.create_security_group(GroupName='<Security group name>',
                                              Description='Security group for aws Inspector',
-                                             VpcId='vpc-78713102')
+                                             VpcId='<Your VPC ID>')
 security_group_id = security_resp['GroupId']
 print(security_group_id)
 
