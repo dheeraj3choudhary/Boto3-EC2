@@ -12,7 +12,7 @@ for alarm in response['MetricAlarms']:
         print(name)
         disable_alarm = client.disable_alarm_actions(AlarmNames=[name])
         print("Alarm {} is disabled".format(name))
-        file1 = open("D:\Python Impetus\AWS_Boto3\myfile.txt", "a")
+        file1 = open("myfile.txt", "a")
         file1.write(name+"\n")
     else:
         print("No enabled Alarms")
