@@ -9,7 +9,6 @@ for alarm in response['MetricAlarms']:
     status = alarm['ActionsEnabled']
     if status:
         name = alarm['AlarmName']
-        print(name)
         disable_alarm = client.disable_alarm_actions(AlarmNames=[name])
         print("Alarm {} is disabled".format(name))
         file1 = open("myfile.txt", "a")
