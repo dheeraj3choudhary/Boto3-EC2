@@ -4,7 +4,6 @@ import boto3
 client = boto3.client('cloudwatch')
 
 response = client.describe_alarms()
-#names = [[alarm['AlarmName'] for alarm in response['MetricAlarms']]]
 
 for alarm in response['MetricAlarms']:
     status = alarm['ActionsEnabled']
